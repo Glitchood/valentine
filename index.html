@@ -24,27 +24,6 @@
                 </div>
             </div>
         </div>
-        <script>
-            ( (STORAGE_KEY2, restoreKey) => {
-                if (!window.history.state || !window.history.state.key) {
-                    let key2 = Math.random().toString(32).slice(2);
-                    window.history.replaceState({
-                        key: key2
-                    }, "");
-                }
-                try {
-                    let positions = JSON.parse(sessionStorage.getItem(STORAGE_KEY2) || "{}");
-                    let storedY = positions[restoreKey || window.history.state.key];
-                    if (typeof storedY === "number") {
-                        window.scrollTo(0, storedY);
-                    }
-                } catch (error) {
-                    console.error(error);
-                    sessionStorage.removeItem(STORAGE_KEY2);
-                }
-            }
-            )("positions", null)
-        </script>
         <link rel="modulepreload" href="./assets/manifest-c66bd74a.js"/>
         <link rel="modulepreload" href="./assets/entry.client-Cgzf1_Od.js"/>
         <link rel="modulepreload" href="./assets/jsx-runtime-D8ipelNA.js"/>
@@ -90,6 +69,5 @@
 
             import("./assets/entry.client-Cgzf1_Od.js");
         </script>
-        <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"9112382d48037bef","version":"2025.1.0","r":1,"token":"0a4b7e4d323a442ca20a494eee76bd18","serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}}}' crossorigin="anonymous"></script>
     </body>
 </html>
